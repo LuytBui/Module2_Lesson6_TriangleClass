@@ -1,13 +1,29 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        Shape tr1 = new Triangle(3, 4, 5);
-        tr1.setColor("white");
-        tr1.setFilled(false);
-        System.out.println(tr1);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập độ dài cạnh thứ nhất: ");
+        double side1 = sc.nextDouble();
+        System.out.print("Nhập độ dài cạnh thứ hai: ");
+        double side2 = sc.nextDouble();
+        System.out.print("Nhập độ dài cạnh thứ ba: ");
+        double side3 = sc.nextDouble();
+        sc.nextLine();
 
-        Shape tr2 = new Triangle(2, 2, 2);
-        System.out.println(tr2);
+        if (isTriangle(side1, side2, side3)){
+            System.out.print("Nhập màu sắc: ");
+            String color = sc.nextLine();
+            Shape tr1 = new Triangle(color, true, side1, side2, side3);
+            System.out.println(tr1);
+        } else {
+            System.out.println("Chiều dài 3 cạnh không tạo nên tam giác!");
+        }
 
+
+    }
+    public static boolean isTriangle(double a, double b, double c){
+        return a < b + c && b < c + a && c < a + b;
     }
 }

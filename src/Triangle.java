@@ -1,22 +1,22 @@
-public class Triangle extends Shape{
+public class Triangle extends Shape {
     private double side1 = 0;
     private double side2 = 0;
     private double side3 = 0;
 
-    public double getPerimeter(){
+    public double getPerimeter() {
         return side1 + side2 + side3;
     }
 
-    public double getArea(){
-        double p = getPerimeter()/2;
-        return Math.sqrt(p*(p - side1)*(p-side2)*(p-side3));
+    public double getArea() {
+        double p = getPerimeter() / 2;
+        return Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));
     }
 
-    public String toString(){
-        return "A Triangle has sides=["+side1 + ", "+ side2 + ", " + side3 + "]"+
-                ", area=" + getArea() +
-                ", perimeter=" + getPerimeter() +
-                " which is a subclass of "+super.toString();
+    public String toString() {
+        return "Tam giác có 3 cạnh là [" + side1 + ", " + side2 + ", " + side3 + "]" +
+                ", diện tích là: " + getArea() +
+                ", chu vi là: " + getPerimeter() +
+                ", màu sắc là: " + super.getColor();
     }
 
     public Triangle() {
